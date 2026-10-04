@@ -1,0 +1,552 @@
+{
+ "meta": {
+  "config": "e1",
+  "split": "all",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "8ce0e6f974fa",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "anthropic/claude-haiku-4-5",
+   "strong": "anthropic/claude-sonnet-5-5",
+   "reflection": "anthropic/claude-opus-5-5"
+  },
+  "llm_mode": "none",
+  "provenance": "api",
+  "created_at": "2026-10-03T06:23:56"
+ },
+ "question_counts": [
+  {
+   "split": "dev",
+   "tier": "T1",
+   "n": 74
+  },
+  {
+   "split": "dev",
+   "tier": "T2",
+   "n": 59
+  },
+  {
+   "split": "dev",
+   "tier": "T3",
+   "n": 44
+  },
+  {
+   "split": "dev",
+   "tier": "T4",
+   "n": 30
+  },
+  {
+   "split": "dev",
+   "tier": "T5",
+   "n": 39
+  },
+  {
+   "split": "dev",
+   "tier": "T6",
+   "n": 45
+  },
+  {
+   "split": "test",
+   "tier": "T1",
+   "n": 78
+  },
+  {
+   "split": "test",
+   "tier": "T2",
+   "n": 59
+  },
+  {
+   "split": "test",
+   "tier": "T3",
+   "n": 42
+  },
+  {
+   "split": "test",
+   "tier": "T4",
+   "n": 31
+  },
+  {
+   "split": "test",
+   "tier": "T5",
+   "n": 40
+  },
+  {
+   "split": "test",
+   "tier": "T6",
+   "n": 45
+  },
+  {
+   "split": "train",
+   "tier": "T1",
+   "n": 135
+  },
+  {
+   "split": "train",
+   "tier": "T2",
+   "n": 105
+  },
+  {
+   "split": "train",
+   "tier": "T3",
+   "n": 77
+  },
+  {
+   "split": "train",
+   "tier": "T4",
+   "n": 52
+  },
+  {
+   "split": "train",
+   "tier": "T5",
+   "n": 35
+  },
+  {
+   "split": "train",
+   "tier": "T6",
+   "n": 79
+  }
+ ],
+ "filing_kinds": {
+  "no_results_page": 38,
+  "digital": 29,
+  "ocr_layer": 178
+ },
+ "evidence_coverage": {
+  "by_page_kind": {
+   "digital": {
+    "located": 644,
+    "facts": 719,
+    "rate": 0.8956884561891516
+   },
+   "ocr_layer": {
+    "located": 3391,
+    "facts": 4354,
+    "rate": 0.7788240698208544
+   },
+   "no_results_page": {
+    "located": 24,
+    "facts": 828,
+    "rate": 0.028985507246376812
+   }
+  },
+  "by_item": {
+   "basic_eps": {
+    "located": 303,
+    "facts": 456,
+    "rate": 0.6644736842105263
+   },
+   "depreciation_and_amortisation": {
+    "located": 337,
+    "facts": 456,
+    "rate": 0.7390350877192983
+   },
+   "diluted_eps": {
+    "located": 299,
+    "facts": 452,
+    "rate": 0.661504424778761
+   },
+   "employee_benefits_expense": {
+    "located": 320,
+    "facts": 454,
+    "rate": 0.7048458149779736
+   },
+   "finance_costs": {
+    "located": 339,
+    "facts": 452,
+    "rate": 0.75
+   },
+   "net_profit_for_period": {
+    "located": 328,
+    "facts": 456,
+    "rate": 0.7192982456140351
+   },
+   "other_income": {
+    "located": 331,
+    "facts": 456,
+    "rate": 0.7258771929824561
+   },
+   "profit_before_tax": {
+    "located": 313,
+    "facts": 456,
+    "rate": 0.6864035087719298
+   },
+   "revenue_from_operations": {
+    "located": 297,
+    "facts": 451,
+    "rate": 0.6585365853658537
+   },
+   "total_comprehensive_income": {
+    "located": 316,
+    "facts": 456,
+    "rate": 0.6929824561403509
+   },
+   "total_expenses": {
+    "located": 305,
+    "facts": 456,
+    "rate": 0.668859649122807
+   },
+   "total_income": {
+    "located": 308,
+    "facts": 456,
+    "rate": 0.6754385964912281
+   },
+   "total_tax_expense": {
+    "located": 263,
+    "facts": 444,
+    "rate": 0.5923423423423423
+   }
+  }
+ },
+ "pdf_vs_xbrl_agreement": {
+  "facts_checked": 5073,
+  "agree": 2294,
+  "disagree": 299,
+  "no_row": 1874,
+  "no_unit": 606,
+  "agree_rate_when_read": 0.8846895487851909,
+  "by_item": {
+   "basic_eps": {
+    "no_row": 303,
+    "agree": 78,
+    "disagree": 11
+   },
+   "depreciation_and_amortisation": {
+    "agree": 209,
+    "no_row": 99,
+    "no_unit": 64,
+    "disagree": 20
+   },
+   "diluted_eps": {
+    "no_row": 288,
+    "agree": 83,
+    "disagree": 18
+   },
+   "employee_benefits_expense": {
+    "agree": 228,
+    "no_unit": 68,
+    "disagree": 11,
+    "no_row": 83
+   },
+   "finance_costs": {
+    "agree": 206,
+    "no_unit": 56,
+    "no_row": 113,
+    "disagree": 13
+   },
+   "net_profit_for_period": {
+    "agree": 192,
+    "no_row": 127,
+    "disagree": 24,
+    "no_unit": 49
+   },
+   "other_income": {
+    "agree": 198,
+    "no_unit": 61,
+    "no_row": 102,
+    "disagree": 31
+   },
+   "profit_before_tax": {
+    "agree": 155,
+    "no_unit": 46,
+    "disagree": 64,
+    "no_row": 127
+   },
+   "revenue_from_operations": {
+    "agree": 197,
+    "no_unit": 62,
+    "no_row": 100,
+    "disagree": 30
+   },
+   "total_comprehensive_income": {
+    "agree": 179,
+    "no_unit": 47,
+    "no_row": 150,
+    "disagree": 16
+   },
+   "total_expenses": {
+    "agree": 222,
+    "no_row": 96,
+    "no_unit": 55,
+    "disagree": 19
+   },
+   "total_income": {
+    "agree": 212,
+    "no_unit": 58,
+    "no_row": 99,
+    "disagree": 23
+   },
+   "total_tax_expense": {
+    "agree": 135,
+    "no_row": 187,
+    "disagree": 19,
+    "no_unit": 40
+   }
+  }
+ },
+ "structural_conflicts": {
+  "count": 62,
+  "examples": [
+   {
+    "filing_id": "nse-groww-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 9929900000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax for the period/year",
+    "pdf_cell": "992.27",
+    "page_id": "nse-groww-2026-06-30#p6"
+   },
+   {
+    "filing_id": "nse-techm-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 20462000000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before Tax (7 - 8)",
+    "pdf_cell": "20,419",
+    "page_id": "nse-techm-2026-06-30#p13"
+   },
+   {
+    "filing_id": "nse-oberoirlty-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 7075200000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (5-6)",
+    "pdf_cell": "71,164",
+    "page_id": "nse-oberoirlty-2026-06-30#p5"
+   },
+   {
+    "filing_id": "nse-reliance-2026-06-30",
+    "scope": "consolidated",
+    "item": "net_profit_for_period",
+    "xbrl_value_inr": 231960000000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit After Tax",
+    "pdf_cell": "23,001",
+    "page_id": "nse-reliance-2026-06-30#p9"
+   },
+   {
+    "filing_id": "nse-bajaj-auto-2026-06-30",
+    "scope": "consolidated",
+    "item": "net_profit_for_period",
+    "xbrl_value_inr": 31887500000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit for the period (10-11)",
+    "pdf_cell": "3,225.63",
+    "page_id": "nse-bajaj-auto-2026-06-30#p4"
+   },
+   {
+    "filing_id": "nse-tvsmotor-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 15595000000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit / (Loss) before tax (5-6)",
+    "pdf_cell": "1,545.19",
+    "page_id": "nse-tvsmotor-2026-06-30#p10"
+   },
+   {
+    "filing_id": "nse-infy-2026-06-30",
+    "scope": "standalone",
+    "item": "net_profit_for_period",
+    "xbrl_value_inr": 72490000000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Net profit",
+    "pdf_cell": "820",
+    "page_id": "nse-infy-2026-06-30#p25"
+   },
+   {
+    "filing_id": "nse-lodha-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 17741000000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (3-4)",
+    "pdf_cell": "17.759",
+    "page_id": "nse-lodha-2026-06-30#p5"
+   },
+   {
+    "filing_id": "nse-coalindia-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 114790400000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit/(Loss) Before Tax (5+6)",
+    "pdf_cell": "11,719.36",
+    "page_id": "nse-coalindia-2026-06-30#p7"
+   },
+   {
+    "filing_id": "nse-godfryphlp-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 2228300000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax from continuing operations (5+6)",
+    "pdf_cell": "25,110",
+    "page_id": "nse-godfryphlp-2026-06-30#p9"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "revenue_from_operations",
+    "xbrl_value_inr": 3410496000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Revenue from Operations",
+    "pdf_cell": "36818.38",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "other_income",
+    "xbrl_value_inr": 43420000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Other Income",
+    "pdf_cell": "299.30",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "total_income",
+    "xbrl_value_inr": 3453916000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Total Income",
+    "pdf_cell": "37117.68",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "finance_costs",
+    "xbrl_value_inr": 65654000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Finance Costs",
+    "pdf_cell": "686.97",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "employee_benefits_expense",
+    "xbrl_value_inr": 238505000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Employee Benefits Expense",
+    "pdf_cell": "2483.40",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 66894000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (3+4)",
+    "pdf_cell": "2062.82",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "net_profit_for_period",
+    "xbrl_value_inr": 51366000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit for the period (5-6)",
+    "pdf_cell": "1526.98",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "basic_eps",
+    "xbrl_value_inr": 0.59,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Basic",
+    "pdf_cell": "1.76",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-nelcast-2026-06-30",
+    "scope": "standalone",
+    "item": "diluted_eps",
+    "xbrl_value_inr": 0.59,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Diluted",
+    "pdf_cell": "1.76",
+    "page_id": "nse-nelcast-2026-06-30#p2"
+   },
+   {
+    "filing_id": "nse-tatapower-2026-06-30",
+    "scope": "standalone",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 5107500000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit/(Loss) Before Tax (3+4)",
+    "pdf_cell": "374.23",
+    "page_id": "nse-tatapower-2026-06-30#p15"
+   },
+   {
+    "filing_id": "nse-radico-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 2978162000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax",
+    "pdf_cell": "30,498.49",
+    "page_id": "nse-radico-2026-06-30#p9"
+   },
+   {
+    "filing_id": "nse-adaniports-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 45950700000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (5+6)",
+    "pdf_cell": "4,307.31",
+    "page_id": "nse-adaniports-2026-06-30#p11"
+   },
+   {
+    "filing_id": "nse-asianpaint-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 20575900000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (7-8)",
+    "pdf_cell": "2,095.75",
+    "page_id": "nse-asianpaint-2026-06-30#p10"
+   },
+   {
+    "filing_id": "nse-dabur-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 7561500000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax",
+    "pdf_cell": "755.65",
+    "page_id": "nse-dabur-2026-06-30#p5"
+   },
+   {
+    "filing_id": "nse-eichermot-2026-06-30",
+    "scope": "consolidated",
+    "item": "profit_before_tax",
+    "xbrl_value_inr": 17577300000.0,
+    "period": "2026-06-30/3m",
+    "pdf_row": "Profit before tax (7+8)",
+    "pdf_cell": "1,925.23",
+    "page_id": "nse-eichermot-2026-06-30#p7"
+   }
+  ]
+ },
+ "company_size_revenue_crore_terciles": [
+  1906.79,
+  6632.42
+ ],
+ "human_validation": {
+  "reviewed": 0,
+  "question_error_rate": null,
+  "gold_error_rate": null,
+  "status": "pending: use the Review UI (`pramaan serve`, /review)"
+ }
+}

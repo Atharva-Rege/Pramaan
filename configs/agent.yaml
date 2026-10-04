@@ -1,0 +1,83 @@
+orchestrator: python
+
+cascade:
+  small_first: true
+  reflect_rounds_small: 1
+  escalate_to_strong: true
+  abstain_when_exhausted: true
+
+reader: llm
+reader_pages_per_get: 3
+search_k: 8
+rerank_cutoff: 5
+
+configs:
+  small_only:
+    tiers: [small]
+    reflect: false
+    verify: true
+  small_reflect:
+    tiers: [small]
+    reflect: true
+    verify: true
+  strong_only:
+    tiers: [strong]
+    reflect: false
+    verify: true
+  cascade:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+  cascade_hybrid:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+    reader: hybrid
+  # Exploratory variants (designed after reading dev failures; confirm on held-out data).
+  small_only_v3:
+    tiers: [small]
+    reflect: false
+    verify: true
+    relax_ratio_units: true
+  strong_only_v3:
+    tiers: [strong]
+    reflect: false
+    verify: true
+    relax_ratio_units: true
+  cascade_escalate_v3:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+    relax_ratio_units: true
+    escalate_on_abstain: true
+  cascade_keep_v3:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+    relax_ratio_units: true
+    escalate_on_abstain: true
+    exclude_failed_pages: false
+
+  rules_only:
+    tiers: [offline]
+    reflect: false
+    verify: true
+    reader: rules
+  ablation_no_calculator:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+    calculator: false
+  ablation_no_verifier:
+    tiers: [small]
+    reflect: false
+    verify: false
+  ablation_no_row_docs:
+    tiers: [small, strong]
+    reflect: true
+    verify: true
+    row_docs: false
+
+abstention:
+  target_selective_accuracy: 0.95
+  default_threshold: 0.5

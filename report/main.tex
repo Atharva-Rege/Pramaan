@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,graphicx,hyperref,xcolor,float}
+\usepackage[numbers,sort&compress]{natbib}
+\input{generated/numbers.tex}
+\providecommand{\PramaanVerified}{n/a}
+\providecommand{\BzeroVerified}{n/a}
+\providecommand{\BoneVerified}{n/a}
+\providecommand{\CostRatioVsLongContext}{n/a}
+\providecommand{\PramaanConfig}{n/a}
+\providecommand{\NSample}{n/a}
+\providecommand{\EvalSplit}{n/a}
+\providecommand{\HOneVerdict}{n/a}
+\providecommand{\TestStatusNote}{n/a}
+\providecommand{\VariantNote}{n/a}
+
+\title{Pramaan: A Self-Grading Research Agent for Indian Company Filings\\That Learns From Exchange XBRL}
+\author{Atharva Rege}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Indian listed companies file the signed results PDF with their board meeting outcome and, shortly afterwards, the same numbers as machine readable Integrated Filing XBRL. The PDF arrives first and the XBRL follows, which makes the XBRL a free, automatic answer key that refreshes every quarter and cannot appear in any model's training data. We build \textsc{Pramaan}, a research agent that answers analyst questions from the PDFs, cites the page and the printed figure behind every number, and verifies each answer before showing it. We contribute (i) a question gym whose gold answers, gold pages and graders are generated from XBRL, including the finding that exchange XBRL and the printed row are defined differently for some line items; (ii) a retrieval cascade whose cross-encoder is fine-tuned on free page labels; (iii) a planner-executor agent whose models never do arithmetic, gated by deterministic verification, with a small-to-strong cascade and an abstention analysis; and (iv) a paired evaluation that reports its negative results. On a dry run on one quarter, the best specified configuration, \PramaanConfig, reaches \PramaanVerified{} verified accuracy against \BzeroVerified{} for naive retrieval augmented generation on a fixed sample of \NSample{} \EvalSplit{} questions. The preregistered cascade hypothesis (H1) is \emph{\HOneVerdict{}} on the \EvalSplit{} sample; on dev we traced the cause to two concrete defects, a verifier rule that discards correct percentage answers and a retry rule that bans the page holding the answer, and evaluate exploratory fixes (\VariantNote{}). Learning from graded outcomes (prompt evolution, a validated lesson memory) and a prompt-injection evaluation are left to future work. Section~\ref{sec:limits} states what the numbers do and do not support.
+\end{abstract}
+
+\section{Introduction}
+Question answering over financial filings is difficult for reasons that general document QA does not capture: numbers are printed in tables whose unit (crore, lakh, million) is stated once in a header, standalone and consolidated statements sit side by side or on adjacent pages, rows carry near identical labels, and many PDFs are scans with an embedded OCR layer that corrupts digits. A wrong digit or a missed unit is a confident, expensive error. We therefore treat \emph{verifiability} as the primary property: an answer counts only if it is correct \emph{and} its citations check out.
+
+Since April 2025 a listed company files its results PDF and the matching Integrated Filing XBRL on the same date. We use the lag between them as a design principle: answer from the PDF when it lands, grade yourself when the XBRL arrives, and learn from the outcome. This paper describes the system, the benchmark it generates, and a first evaluation on one quarter. We state hypotheses before looking at test data, report paired statistics, and keep specified configurations separate from variants that we designed after reading dev failures.
+
+\section{Related work}
+Financial QA benchmarks such as FinanceBench~\citep{islam2023financebench} are fixed and public, so they can leak into training data; to our knowledge no automatically refreshing benchmark exists for Indian company filings. Retrieval pipelines that fuse lexical and dense results~\citep{cormack2009rrf} and rerank with cross-encoders~\citep{nogueira2019passage} are standard; we show that an off-the-shelf reranker can hurt on near identical statement pages and that free page labels fix it. Our agent modules are DSPy programs~\citep{khattab2023dspy}; reflective prompt evolution~\citep{agrawal2025gepa} and verbal reinforcement~\citep{shinn2023reflexion} are natural ways to learn from the graded outcomes and are future work here. Cascades trade cost for accuracy~\citep{chen2023frugalgpt}; ours is gated by deterministic checks rather than a learned scorer. Selective prediction and calibration~\citep{geifman2017selective,guo2017calibration} frame our abstention analysis. Indirect prompt injection~\citep{greshake2023indirect} matters for any agent that reads third-party documents; the agent marks page text as data in the manner of spotlighting~\citep{hines2024spotlighting}, but we do not evaluate robustness here.
+
+\section{The gym}
+\paragraph{Gold from XBRL.} Per filing we store the PDF, the standalone and consolidated XBRL instances, and both publication timestamps. Questions come from six tiers: lookup, year on year growth, ratio, cross period share, cross company ranking, and abstain or false premise (including controls where the premise is true, so that abstaining on everything does not score). Gold values are computed from XBRL; the grader tolerates half the printed precision for money and 0.1 points for percentages, and ranking questions must match the exact order.
+\paragraph{Only ask what the PDF prints.} We locate each fact in the PDF by rendering it under unit candidates and decimals and matching table cells, calibrating the page unit by the number of matches. A fact becomes a question only if its cell is in the row for that line item; if the page has an exact label match with a different number the fact is dropped and counted. This both guarantees valid gold and surfaces a real data issue: for some consolidated statements the XBRL profit before tax excludes the share of associates that the printed row includes.
+\paragraph{As-of guard and splits.} Every question has an as-of timestamp and tools only see documents published before it. Splits are chronological and frozen; the test split is guarded in code and every access is logged. Question selection fills the six tiers proportionally and caps questions per filing; when the cap binds, the tier mix is preserved rather than letting the abundant lookup tier crowd out the others.
+
+\section{System}
+\paragraph{Retrieval.} Page documents (a digest of the table for results pages) and row documents are indexed by BM25 and a dense encoder; reciprocal rank fusion feeds a cross-encoder, optionally fine-tuned on pairs (question, printed page) with hard negatives from the same filing, the other scope, other periods and other companies, holding out companies for early stopping. A hard check refuses to export any page that belongs to a dev or test filing.
+\paragraph{Agent.} Intake, plan, execute, compose, verify, reflect, escalate, abstain, implemented as a plain Python state machine around DSPy modules. Tools are typed and respect the as-of guard; arithmetic happens only in an AST calculator. Table reading is a DSPy module over layout text or a deterministic layout parser; normalisation (unit, period columns, canonical line item, conversion to crore) is deterministic. Page reads are shared across questions and single-flight, so concurrent workers never pay for the same page twice.
+\paragraph{Verification.} V1 quote on the cited page and equal to the input under the page unit; V2 recomputation; V3 unit sanity and magnitude against the company's previous filing; V4 accounting identities on the cited table; V5 period; V6 XBRL cross-check in production; V7 cell provenance. A hard failure triggers one reflection with the small model, then escalation to the strong model, then abstention. Confidence is a logistic model over check results, retrieval margin, tier and retries.
+
+\section{Failure diagnosis}
+One diagnostic function compares an episode with gold slots, gold pages and gold values and writes plain-language feedback (for example ``value is 100x too large; the page unit is lakhs''). Failure attribution assigns each failure to a stage and replays the episode with the gold artifact injected at that stage; it has been run on the offline agent only. The same feedback is designed to drive prompt evolution and a lesson memory, which are future work.
+
+\section{Experiments}
+\input{generated/results.tex}
+
+\section{Limitations}\label{sec:limits}
+\begin{itemize}\itemsep0pt
+\item \textbf{Small, single-quarter evidence.} All agent results use fixed samples of one hundred questions from a dry run on one quarter, one domain (Ind AS, non bank results) and facts that XBRL covers. Confidence intervals are wide, and several comparisons (for example the repaired cascade against the strong model) are inconclusive at this size.
+\item \textbf{Held-out data.} \TestStatusNote{} The exploratory variants were designed after reading dev failures, so their dev numbers are optimistic; a variant counts as confirmed only under the rule in the preregistration addendum, and a confirmed variant becomes a headline result only after the full test run.
+\item \textbf{Untested hypotheses.} The long-context baseline B1, learning from graded outcomes (H4, H5) and robustness to prompt injection (H6) were preregistered but are not part of this version, so no claim is made for them.
+\item \textbf{Synthetic questions.} Questions are template questions with rule-based surface variants; they test generalisation to new companies and filings, not free-form analyst phrasing. Human validation of the question sample is pending.
+\item \textbf{Offline results.} Rows labelled offline come from a deterministic backend, not a language model; failure attribution was run only on that backend.
+\item \textbf{Data quality.} Many PDFs are scans with an embedded OCR layer, and filings without a detected results page contribute no questions. One exchange PDF was truncated at the source and excluded. Gold values are XBRL except where adjudication overrides them.
+\item \textbf{Cost accounting.} Costs are real API spend recorded at the price of the original call; the pre-run estimator was conservative by a wide margin and the ledger is authoritative.
+\end{itemize}
+
+\section{Conclusion}
+A free, automatic answer key that arrives after the document turns a static QA task into a loop: answer, verify, get graded. In this first evaluation the largest effects are the ones a verifiable design makes visible: a fine-tuned reranker on free labels removes retrieval as the bottleneck, the agent is far more accurate than naive RAG, and the remaining loss sits in the verifier and the retry logic rather than in the models. The specified cascade did not beat a single small model and is significantly worse than the strong model on the held-out sample, so H1 is not supported. Paired experiments on dev located two defects; the fix that keeps failed pages available is confirmed on held-out questions (+12 points over the specified cascade), and the repaired cascade matches the strong model there, but at only about 3\% lower cost per question, against 14\% on dev. All agent configurations lose 10 to 13 points from dev to test. The next steps are the full test split, the long-context baseline, learning from graded outcomes, and a prompt-injection evaluation.
+
+{\small\setlength{\bibsep}{2pt}
+\bibliographystyle{plainnat}
+\bibliography{refs}}
+\end{document}

@@ -1,0 +1,438 @@
+{
+ "meta": {
+  "config": "e2",
+  "split": "dev",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "8ce0e6f974fa",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "offline/rules",
+   "strong": "offline/rules",
+   "reflection": "offline/rules"
+  },
+  "llm_mode": "none",
+  "provenance": "api",
+  "created_at": "2026-10-03T09:11:43",
+  "n_queries": 207,
+  "finetuned": "artifacts/reranker/cpu/model"
+ },
+ "results": {
+  "scoped": [
+   {
+    "stages": "R1 BM25 only",
+    "recall@1": 0.4396,
+    "recall@3": 0.715,
+    "recall@5": 0.8599,
+    "recall@10": 0.9614,
+    "mrr": 0.6087,
+    "ndcg@10": 0.6936,
+    "latency_ms": {
+     "bm25": 0.18,
+     "dense": 0.0,
+     "fusion": 0.01,
+     "ce": 0.0,
+     "total": 0.23
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1 dense only",
+    "recall@1": 0.7971,
+    "recall@3": 0.9662,
+    "recall@5": 0.9903,
+    "recall@10": 0.9952,
+    "mrr": 0.8828,
+    "ndcg@10": 0.9106,
+    "latency_ms": {
+     "bm25": 0.0,
+     "dense": 13.27,
+     "fusion": 0.02,
+     "ce": 0.0,
+     "total": 13.46
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 BM25+dense RRF",
+    "recall@1": 0.6329,
+    "recall@3": 0.9034,
+    "recall@5": 0.9855,
+    "recall@10": 0.9952,
+    "mrr": 0.7742,
+    "ndcg@10": 0.8292,
+    "latency_ms": {
+     "bm25": 0.4,
+     "dense": 10.57,
+     "fusion": 0.03,
+     "ce": 0.0,
+     "total": 11.19
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 with row docs",
+    "recall@1": 0.8551,
+    "recall@3": 0.9807,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.918,
+    "ndcg@10": 0.9385,
+    "latency_ms": {
+     "bm25": 1.33,
+     "dense": 12.51,
+     "fusion": 0.04,
+     "ce": 0.0,
+     "total": 14.1
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + off-the-shelf cross-encoder",
+    "recall@1": 0.4879,
+    "recall@3": 0.8357,
+    "recall@5": 0.9179,
+    "recall@10": 0.9662,
+    "mrr": 0.6731,
+    "ndcg@10": 0.7452,
+    "latency_ms": {
+     "bm25": 1.35,
+     "dense": 18.63,
+     "fusion": 0.03,
+     "ce": 1375.29,
+     "total": 1395.58
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + fine-tuned cross-encoder",
+    "recall@1": 0.9758,
+    "recall@3": 0.9903,
+    "recall@5": 0.9903,
+    "recall@10": 1.0,
+    "mrr": 0.9846,
+    "ndcg@10": 0.9865,
+    "latency_ms": {
+     "bm25": 1.37,
+     "dense": 19.17,
+     "fusion": 0.05,
+     "ce": 1336.04,
+     "total": 1356.99
+    },
+    "n": 207
+   }
+  ],
+  "scoped+scope": [
+   {
+    "stages": "R1 BM25 only",
+    "recall@1": 0.5121,
+    "recall@3": 0.8068,
+    "recall@5": 0.9372,
+    "recall@10": 0.9903,
+    "mrr": 0.6741,
+    "ndcg@10": 0.7516,
+    "latency_ms": {
+     "bm25": 0.17,
+     "dense": 0.0,
+     "fusion": 0.0,
+     "ce": 0.0,
+     "total": 0.23
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1 dense only",
+    "recall@1": 0.8357,
+    "recall@3": 0.9758,
+    "recall@5": 0.9952,
+    "recall@10": 1.0,
+    "mrr": 0.9093,
+    "ndcg@10": 0.9321,
+    "latency_ms": {
+     "bm25": 0.0,
+     "dense": 10.84,
+     "fusion": 0.02,
+     "ce": 0.0,
+     "total": 11.11
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 BM25+dense RRF",
+    "recall@1": 0.6425,
+    "recall@3": 0.9565,
+    "recall@5": 0.9855,
+    "recall@10": 0.9952,
+    "mrr": 0.7969,
+    "ndcg@10": 0.8475,
+    "latency_ms": {
+     "bm25": 0.44,
+     "dense": 10.83,
+     "fusion": 0.03,
+     "ce": 0.0,
+     "total": 11.55
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 with row docs",
+    "recall@1": 0.8841,
+    "recall@3": 0.9903,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9372,
+    "ndcg@10": 0.9534,
+    "latency_ms": {
+     "bm25": 1.28,
+     "dense": 11.26,
+     "fusion": 0.03,
+     "ce": 0.0,
+     "total": 12.82
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + off-the-shelf cross-encoder",
+    "recall@1": 0.5169,
+    "recall@3": 0.8792,
+    "recall@5": 0.9372,
+    "recall@10": 0.9807,
+    "mrr": 0.7018,
+    "ndcg@10": 0.7712,
+    "latency_ms": {
+     "bm25": 1.22,
+     "dense": 11.87,
+     "fusion": 0.03,
+     "ce": 116.8,
+     "total": 130.16
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + fine-tuned cross-encoder",
+    "recall@1": 0.9758,
+    "recall@3": 0.9903,
+    "recall@5": 0.9952,
+    "recall@10": 1.0,
+    "mrr": 0.9849,
+    "ndcg@10": 0.9874,
+    "latency_ms": {
+     "bm25": 1.37,
+     "dense": 18.96,
+     "fusion": 0.03,
+     "ce": 1192.94,
+     "total": 1213.62
+    },
+    "n": 207
+   }
+  ],
+  "open": [
+   {
+    "stages": "R1 BM25 only",
+    "recall@1": 0.343,
+    "recall@3": 0.5072,
+    "recall@5": 0.657,
+    "recall@10": 0.7923,
+    "mrr": 0.4654,
+    "ndcg@10": 0.5399,
+    "latency_ms": {
+     "bm25": 0.33,
+     "dense": 0.0,
+     "fusion": 0.02,
+     "ce": 0.0,
+     "total": 0.39
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1 dense only",
+    "recall@1": 0.7874,
+    "recall@3": 0.9662,
+    "recall@5": 0.9903,
+    "recall@10": 0.9952,
+    "mrr": 0.878,
+    "ndcg@10": 0.9071,
+    "latency_ms": {
+     "bm25": 0.0,
+     "dense": 57.93,
+     "fusion": 0.05,
+     "ce": 0.0,
+     "total": 58.18
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 BM25+dense RRF",
+    "recall@1": 0.57,
+    "recall@3": 0.8599,
+    "recall@5": 0.942,
+    "recall@10": 0.9662,
+    "mrr": 0.7213,
+    "ndcg@10": 0.7819,
+    "latency_ms": {
+     "bm25": 1.12,
+     "dense": 63.21,
+     "fusion": 0.12,
+     "ce": 0.0,
+     "total": 64.73
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 with row docs",
+    "recall@1": 0.7778,
+    "recall@3": 0.9517,
+    "recall@5": 0.9903,
+    "recall@10": 1.0,
+    "mrr": 0.8684,
+    "ndcg@10": 0.9007,
+    "latency_ms": {
+     "bm25": 6.11,
+     "dense": 63.61,
+     "fusion": 0.42,
+     "ce": 0.0,
+     "total": 70.44
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + off-the-shelf cross-encoder",
+    "recall@1": 0.5459,
+    "recall@3": 0.8744,
+    "recall@5": 0.9372,
+    "recall@10": 0.9758,
+    "mrr": 0.718,
+    "ndcg@10": 0.7814,
+    "latency_ms": {
+     "bm25": 3.1,
+     "dense": 48.09,
+     "fusion": 1.01,
+     "ce": 2194.65,
+     "total": 2247.18
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + fine-tuned cross-encoder",
+    "recall@1": 0.9807,
+    "recall@3": 0.9903,
+    "recall@5": 0.9952,
+    "recall@10": 1.0,
+    "mrr": 0.9873,
+    "ndcg@10": 0.9888,
+    "latency_ms": {
+     "bm25": 2.86,
+     "dense": 51.51,
+     "fusion": 0.59,
+     "ce": 2587.54,
+     "total": 2642.85
+    },
+    "n": 207
+   }
+  ],
+  "open+scope": [
+   {
+    "stages": "R1 BM25 only",
+    "recall@1": 0.3671,
+    "recall@3": 0.6039,
+    "recall@5": 0.7198,
+    "recall@10": 0.8551,
+    "mrr": 0.5105,
+    "ndcg@10": 0.5903,
+    "latency_ms": {
+     "bm25": 0.28,
+     "dense": 0.0,
+     "fusion": 0.01,
+     "ce": 0.0,
+     "total": 0.35
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1 dense only",
+    "recall@1": 0.8261,
+    "recall@3": 0.9758,
+    "recall@5": 0.9952,
+    "recall@10": 1.0,
+    "mrr": 0.9045,
+    "ndcg@10": 0.9285,
+    "latency_ms": {
+     "bm25": 0.0,
+     "dense": 56.07,
+     "fusion": 0.05,
+     "ce": 0.0,
+     "total": 56.42
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 BM25+dense RRF",
+    "recall@1": 0.6232,
+    "recall@3": 0.9179,
+    "recall@5": 0.9614,
+    "recall@10": 0.971,
+    "mrr": 0.7685,
+    "ndcg@10": 0.8198,
+    "latency_ms": {
+     "bm25": 1.08,
+     "dense": 61.75,
+     "fusion": 0.12,
+     "ce": 0.0,
+     "total": 63.33
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1+R2 with row docs",
+    "recall@1": 0.8406,
+    "recall@3": 0.9662,
+    "recall@5": 0.9807,
+    "recall@10": 1.0,
+    "mrr": 0.9049,
+    "ndcg@10": 0.9287,
+    "latency_ms": {
+     "bm25": 4.44,
+     "dense": 60.23,
+     "fusion": 0.41,
+     "ce": 0.0,
+     "total": 65.49
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + off-the-shelf cross-encoder",
+    "recall@1": 0.5845,
+    "recall@3": 0.8841,
+    "recall@5": 0.9517,
+    "recall@10": 0.9758,
+    "mrr": 0.7448,
+    "ndcg@10": 0.8026,
+    "latency_ms": {
+     "bm25": 2.73,
+     "dense": 43.77,
+     "fusion": 0.54,
+     "ce": 1053.41,
+     "total": 1100.81
+    },
+    "n": 207
+   },
+   {
+    "stages": "R1-R3 + fine-tuned cross-encoder",
+    "recall@1": 0.9807,
+    "recall@3": 0.9903,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9877,
+    "ndcg@10": 0.9899,
+    "latency_ms": {
+     "bm25": 2.43,
+     "dense": 41.42,
+     "fusion": 0.66,
+     "ce": 2614.02,
+     "total": 2658.82
+    },
+    "n": 207
+   }
+  ]
+ }
+}

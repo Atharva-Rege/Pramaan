@@ -1,0 +1,9 @@
+[Unit]
+Description=Pramaan season collector (one pass; a no-op outside the results window)
+
+[Service]
+Type=oneshot
+# A full pass over the universe at one request every two seconds per host can take hours.
+TimeoutStartSec=8h
+Nice=10
+ExecStart=%h/Documents/Projects/Pramaan/scripts/collect_season.sh

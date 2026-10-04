@@ -1,0 +1,24 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv venv --python 3.12 && uv pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: uv pip install -e ".[dev,serve]"
+      - run: uv run ruff check .
+      - run: uv run mypy pramaan/core
+      - run: uv run pytest tests/unit tests/property tests/golden
+      - run: uv run pytest tests/integration
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: cd web && npm ci && npm run build

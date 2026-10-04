@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "config": "e8",
+  "split": "all",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "8ce0e6f974fa",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "anthropic/claude-haiku-4-5",
+   "strong": "anthropic/claude-sonnet-5-5",
+   "reflection": "anthropic/claude-opus-5-5"
+  },
+  "llm_mode": "none",
+  "provenance": "api",
+  "created_at": "2026-10-03T06:23:58"
+ },
+ "lag": {
+  "all": {
+   "n": 245,
+   "median_minutes": 72.15,
+   "p25_minutes": 25.233333333333334,
+   "p75_minutes": 163.96666666666667,
+   "p95_minutes": 316.9166666666667,
+   "pdf_first_share": 0.9510204081632653,
+   "xbrl_first_share": 0.04897959183673469,
+   "within_30min_share": 0.27755102040816326,
+   "over_3h_share": 0.21224489795918366
+  },
+  "nifty200": {
+   "n": 154,
+   "median_minutes": 82.84166666666667,
+   "p25_minutes": 32.8375,
+   "p75_minutes": 183.55833333333334,
+   "p95_minutes": 355.1241666666666,
+   "pdf_first_share": 0.9675324675324676,
+   "xbrl_first_share": 0.032467532467532464,
+   "within_30min_share": 0.2077922077922078,
+   "over_3h_share": 0.2662337662337662
+  },
+  "others": {
+   "n": 91,
+   "median_minutes": 39.38333333333333,
+   "p25_minutes": 13.7,
+   "p75_minutes": 107.53333333333333,
+   "p95_minutes": 230.6,
+   "pdf_first_share": 0.9230769230769231,
+   "xbrl_first_share": 0.07692307692307693,
+   "within_30min_share": 0.3956043956043956,
+   "over_3h_share": 0.12087912087912088
+  },
+  "histogram_edges_minutes": [
+   -1000000000.0,
+   -60,
+   -5,
+   0,
+   5,
+   15,
+   30,
+   60,
+   180,
+   720,
+   1000000000.0
+  ],
+  "histogram": [
+   3,
+   7,
+   2,
+   8,
+   20,
+   33,
+   35,
+   85,
+   50,
+   2
+  ]
+ },
+ "revisions": {
+  "filings_with_revised_xbrl": 15,
+  "share": 0.061224489795918366
+ },
+ "adjudications": {},
+ "adjudicated_total": 0
+}

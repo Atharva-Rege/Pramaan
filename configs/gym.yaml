@@ -1,0 +1,96 @@
+profile: q1fy27_dryrun
+
+profiles:
+  q1fy27_dryrun:
+    target_period_end: "2026-06-30"
+    prior_year_period_end: "2025-06-30"
+    train_until: "2026-07-31"
+    dev_from: "2026-08-01"
+    dev_until: "2026-08-07"
+    test_from: "2026-08-08"
+    sizes: { train: 800, dev: 300, test: 600 }
+  q2fy27_season:
+    target_period_end: "2026-09-30"
+    prior_year_period_end: "2025-09-30"
+    train_until: "2026-10-20"
+    dev_from: "2026-10-21"
+    dev_until: "2026-10-31"
+    test_from: "2026-11-01"
+    sizes: { train: 800, dev: 300, test: 600 }
+
+seed: 20261002
+
+tier_mix:
+  T1: 0.25
+  T2: 0.20
+  T3: 0.15
+  T4: 0.10
+  T5: 0.15
+  T6: 0.15
+
+t1_items:
+  - revenue_from_operations
+  - other_income
+  - total_income
+  - total_expenses
+  - finance_costs
+  - employee_benefits_expense
+  - depreciation_and_amortisation
+  - profit_before_tax
+  - total_tax_expense
+  - net_profit_for_period
+  - total_comprehensive_income
+  - basic_eps
+  - diluted_eps
+
+t2_items:
+  - revenue_from_operations
+  - total_income
+  - total_expenses
+  - profit_before_tax
+  - net_profit_for_period
+  - basic_eps
+
+t5_metrics:
+  - revenue_from_operations
+  - net_profit_for_period
+  - profit_before_tax
+  - net_profit_margin
+
+ratios:
+  net_profit_margin:
+    label: net profit margin
+    numerator: net_profit_for_period
+    denominator: revenue_from_operations
+    scale: 100
+    unit: percent
+    requires_positive: []
+  effective_tax_rate:
+    label: effective tax rate
+    numerator: total_tax_expense
+    denominator: profit_before_tax
+    scale: 100
+    unit: percent
+    requires_positive: [profit_before_tax]
+  other_income_share_of_pbt:
+    label: other income as a share of profit before tax
+    numerator: other_income
+    denominator: profit_before_tax
+    scale: 100
+    unit: percent
+    requires_positive: [profit_before_tax]
+
+tolerances:
+  money_floor_crore: 0.01
+  percent_points: 0.1
+  per_share: 0.01
+  min_abs_denominator_crore: 1.0
+  max_abs_growth_percent: 5000
+
+evidence:
+  unit_candidates: [1, 1000, 100000, 1000000, 10000000]
+  decimals: [0, 1, 2]
+  ocr_edit_distance: 1
+  min_page_matches: 4
+
+human_check_sample: 100

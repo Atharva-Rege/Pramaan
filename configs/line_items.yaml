@@ -1,0 +1,247 @@
+scopes:
+  standalone:
+    xbrl_values: ["Standalone"]
+    aliases: ["standalone", "stand-alone", "stand alone", "non-consolidated", "unconsolidated", "separate"]
+  consolidated:
+    xbrl_values: ["Consolidated"]
+    aliases: ["consolidated", "group"]
+
+xbrl_meta:
+  scope: NatureOfReportStandaloneConsolidated
+  audited: WhetherResultsAreAuditedOrUnaudited
+  rounding: LevelOfRounding
+  board_meeting_date: DateOfBoardMeetingWhenFinancialResultsWereApproved
+  isin: ISIN
+  symbol: Symbol
+  scrip_code: ScripCode
+  company_name: NameOfTheCompany
+  period_start: DateOfStartOfReportingPeriod
+  period_end: DateOfEndOfReportingPeriod
+  reporting_quarter: ReportingQuarter
+
+items:
+  revenue_from_operations:
+    kind: money
+    xbrl: [RevenueFromOperations]
+    names: ["revenue from operations", "revenue", "net sales", "sales", "turnover", "top line", "operating revenue"]
+    aliases:
+      - revenue from operations
+      - revenue from operations (net)
+      - total revenue from operations
+      - net sales/income from operations
+      - net sales / income from operations
+      - income from operations
+      - sales/income from operations
+      - net sales
+      - sales
+      - (a) sales
+      - revenue from sale of products
+      - sale of products and services
+      - revenue
+  other_income:
+    kind: money
+    xbrl: [OtherIncome]
+    names: ["other income"]
+    aliases: [other income, other operating income, other non-operating income]
+  total_income:
+    kind: money
+    xbrl: [Income]
+    names: ["total income", "total revenue"]
+    aliases: [total income, total income (i+ii), total income (i + ii), total revenue, total income from operations]
+  cost_of_materials_consumed:
+    kind: money
+    xbrl: [CostOfMaterialsConsumed]
+    names: ["cost of materials consumed", "raw material cost", "material cost"]
+    aliases: [cost of materials consumed, cost of raw materials consumed, raw materials consumed, cost of materials]
+  purchases_of_stock_in_trade:
+    kind: money
+    xbrl: [PurchasesOfStockInTrade]
+    names: ["purchases of stock in trade", "purchase of traded goods"]
+    aliases: [purchases of stock-in-trade, purchase of stock-in-trade, purchases of traded goods, purchase of traded goods]
+  changes_in_inventories:
+    kind: money
+    xbrl: [ChangesInInventoriesOfFinishedGoodsWorkInProgressAndStockInTrade]
+    names: ["changes in inventories"]
+    aliases:
+      - changes in inventories of finished goods, work-in-progress and stock-in-trade
+      - changes in inventories of finished goods and work-in-progress
+      - changes in inventories
+      - (increase)/decrease in inventories
+      - decrease/(increase) in inventories of finished goods
+  employee_benefits_expense:
+    kind: money
+    xbrl: [EmployeeBenefitExpense]
+    names: ["employee benefits expense", "employee cost", "staff cost", "employee expenses"]
+    aliases: [employee benefits expense, employee benefit expense, employee benefits expenses, employee cost, employee costs, staff costs, employee benefit expenses]
+  finance_costs:
+    kind: money
+    xbrl: [FinanceCosts]
+    names: ["finance costs", "finance cost", "interest cost", "interest expense"]
+    aliases: [finance costs, finance cost, interest expense, interest and finance charges]
+  depreciation_and_amortisation:
+    kind: money
+    xbrl: [DepreciationDepletionAndAmortisationExpense]
+    names: ["depreciation and amortisation", "depreciation", "d&a"]
+    aliases:
+      - depreciation and amortisation expense
+      - depreciation and amortization expense
+      - depreciation, amortisation and impairment expense
+      - depreciation and amortisation
+      - depreciation and amortization
+      - depreciation
+  other_expenses:
+    kind: money
+    xbrl: [OtherExpenses]
+    names: ["other expenses"]
+    aliases: [other expenses, other expense]
+  total_expenses:
+    kind: money
+    xbrl: [Expenses]
+    names: ["total expenses", "total expenditure", "total costs"]
+    aliases: [total expenses, total expenses (iv), total expenditure, total expenses (a to h)]
+  profit_before_exceptional_items_and_tax:
+    kind: money
+    xbrl: [ProfitBeforeExceptionalItemsAndTax]
+    names: ["profit before exceptional items and tax", "profit before exceptional items"]
+    aliases:
+      - profit before exceptional items and tax
+      - profit before exceptional items and tax (iii-iv)
+      - profit/(loss) before exceptional items and tax
+      - profit before exceptional items, share of profit of associates and tax
+  exceptional_items:
+    kind: money
+    xbrl: [ExceptionalItemsBeforeTax]
+    names: ["exceptional items"]
+    aliases: [exceptional items, exceptional item, exceptional items (net), exceptional items - income/(expense)]
+  profit_before_tax:
+    kind: money
+    xbrl: [ProfitBeforeTax]
+    names: ["profit before tax", "pbt"]
+    aliases:
+      - profit before tax
+      - profit/(loss) before tax
+      - profit before tax (iii-iv)
+      - profit before tax (v-vi)
+      - profit/(loss) before tax (v-vi)
+      - net profit before tax
+      - profit before income tax
+  current_tax:
+    kind: money
+    xbrl: [CurrentTax]
+    names: ["current tax"]
+    aliases: [current tax, current tax expense, current income tax, income tax - current, tax - current]
+  deferred_tax:
+    kind: money
+    xbrl: [DeferredTax]
+    names: ["deferred tax"]
+    aliases: [deferred tax, deferred tax expense, deferred tax charge, deferred tax (credit)/charge, income tax - deferred]
+  total_tax_expense:
+    kind: money
+    xbrl: [TaxExpense]
+    names: ["total tax expense", "tax expense", "income tax expense"]
+    aliases: [total tax expense, tax expense, total tax expenses, income tax expense, total income tax expense, tax expenses]
+  net_profit_for_period:
+    kind: money
+    xbrl: [ProfitLossForPeriod, ProfitLossForPeriodFromContinuingOperations]
+    names: ["net profit", "profit after tax", "pat", "profit for the period", "net profit for the period"]
+    aliases:
+      - net profit for the period
+      - net profit for the period/year
+      - profit for the period
+      - profit for the period/year
+      - profit for the period/year (vii-viii)
+      - profit/(loss) for the period
+      - profit after tax
+      - net profit after tax
+      - profit for the quarter
+      - net profit/(loss) for the period
+  other_comprehensive_income:
+    kind: money
+    xbrl: [OtherComprehensiveIncomeNetOfTaxes]
+    names: ["other comprehensive income", "oci"]
+    aliases:
+      - other comprehensive income
+      - other comprehensive income (net of tax)
+      - other comprehensive income/(loss) for the period (net of tax)
+      - other comprehensive income / (expense) for the period/year (net of tax)
+      - total other comprehensive income
+  total_comprehensive_income:
+    kind: money
+    xbrl: [ComprehensiveIncomeForThePeriod]
+    names: ["total comprehensive income", "tci"]
+    aliases:
+      - total comprehensive income
+      - total comprehensive income for the period
+      - total comprehensive income for the period/year
+      - total comprehensive income/(loss) for the period
+  paid_up_equity_share_capital:
+    kind: money
+    xbrl: [PaidUpValueOfEquityShareCapital]
+    names: ["paid up equity share capital", "equity share capital", "paid-up capital"]
+    aliases:
+      - paid-up equity share capital
+      - paid up equity share capital
+      - equity share capital
+      - paid-up equity share capital (face value
+      - paid up equity share capital (face value
+  basic_eps:
+    kind: per_share
+    xbrl: [BasicEarningsLossPerShareFromContinuingAndDiscontinuedOperations, BasicEarningsLossPerShareFromContinuingOperations]
+    names: ["basic eps", "basic earnings per share", "eps"]
+    aliases: [basic eps, basic (in rs.), basic (in inr), basic (inr), basic earnings per share, earnings per share basic, earnings per equity share basic, basic, "-basic", "(a) basic"]
+  diluted_eps:
+    kind: per_share
+    xbrl: [DilutedEarningsLossPerShareFromContinuingAndDiscontinuedOperations, DilutedEarningsLossPerShareFromContinuingOperations]
+    names: ["diluted eps", "diluted earnings per share"]
+    aliases: [diluted eps, diluted (in rs.), diluted (in inr), diluted (inr), diluted earnings per share, earnings per share diluted, diluted, "-diluted", "(b) diluted"]
+
+identities:
+  - id: total_income
+    lhs: total_income
+    rhs: [revenue_from_operations, other_income]
+    scopes: [standalone, consolidated]
+  - id: total_tax
+    lhs: total_tax_expense
+    rhs: [current_tax, deferred_tax]
+    scopes: [standalone, consolidated]
+  - id: net_profit_standalone
+    lhs: net_profit_for_period
+    rhs: [profit_before_tax, -total_tax_expense]
+    scopes: [standalone]
+  - id: total_comprehensive
+    lhs: total_comprehensive_income
+    rhs: [net_profit_for_period, other_comprehensive_income]
+    scopes: [standalone]
+
+identity_tolerance:
+  abs_crore: 0.0205
+  rel: 0.002
+
+units:
+  crore: 1.0
+  crores: 1.0
+  cr: 1.0
+  lakh: 0.01
+  lakhs: 0.01
+  lacs: 0.01
+  lac: 0.01
+  million: 0.1
+  millions: 0.1
+  mn: 0.1
+  thousand: 0.0001
+  thousands: 0.0001
+  rupees: 0.0000001
+  rs: 0.0000001
+
+unit_to_inr:
+  crore: 10000000
+  crores: 10000000
+  lakh: 100000
+  lakhs: 100000
+  lacs: 100000
+  million: 1000000
+  millions: 1000000
+  thousand: 1000
+  thousands: 1000
+  rupees: 1
+  inr: 1

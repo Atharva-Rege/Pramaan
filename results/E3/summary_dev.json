@@ -1,0 +1,101 @@
+{
+ "meta": {
+  "config": "e3",
+  "split": "dev",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "925a22871594",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "anthropic/claude-haiku-4-5",
+   "strong": "anthropic/claude-sonnet-5-5",
+   "reflection": "anthropic/claude-opus-5-5"
+  },
+  "reranker": "artifacts/reranker/cpu/model",
+  "llm_mode": "api",
+  "provenance": "api",
+  "created_at": "2026-10-03T17:34:40",
+  "configs": [
+   "cascade_keep_v3"
+  ],
+  "subset": 100,
+  "tag": ""
+ },
+ "table": {
+  "cascade_keep_v3": {
+   "n": 100,
+   "accuracy": 0.83,
+   "accuracy_ci": [
+    0.7443900343642612,
+    0.9038461538461539
+   ],
+   "verified_accuracy": 0.83,
+   "verified_accuracy_ci": [
+    0.7443900343642612,
+    0.9038461538461539
+   ],
+   "citation_valid_rate": 1.0,
+   "abstain_rate": 0.21,
+   "false_abstain_rate": 0.13953488372093023,
+   "t6_accuracy": 0.9285714285714286,
+   "cost_total_usd": 2.6162,
+   "cost_per_question_usd": 0.02616,
+   "cost_per_verified_correct_usd": 0.03152,
+   "latency_ms_p50": 19983.5,
+   "latency_ms_p95": 65059.09999999999,
+   "escalation_rate": 0.22,
+   "retry_rate": 0.24,
+   "errors": 0,
+   "ece": 0.15069999999999992,
+   "aurc": 0.04731397410169507,
+   "selective_accuracy_at_90_coverage": 0.9222222222222223,
+   "by_tier": {
+    "T1": {
+     "n": 28.0,
+     "accuracy": 0.8214285714285714,
+     "verified_accuracy": 0.8214285714285714,
+     "abstain_rate": 0.14285714285714285
+    },
+    "T2": {
+     "n": 14.0,
+     "accuracy": 0.8571428571428571,
+     "verified_accuracy": 0.8571428571428571,
+     "abstain_rate": 0.07142857142857142
+    },
+    "T3": {
+     "n": 18.0,
+     "accuracy": 1.0,
+     "verified_accuracy": 1.0,
+     "abstain_rate": 0.0
+    },
+    "T4": {
+     "n": 11.0,
+     "accuracy": 0.6363636363636364,
+     "verified_accuracy": 0.6363636363636364,
+     "abstain_rate": 0.36363636363636365
+    },
+    "T5": {
+     "n": 15.0,
+     "accuracy": 0.6666666666666666,
+     "verified_accuracy": 0.6666666666666666,
+     "abstain_rate": 0.2
+    },
+    "T6": {
+     "n": 14.0,
+     "accuracy": 0.9285714285714286,
+     "verified_accuracy": 0.9285714285714286,
+     "abstain_rate": 0.6428571428571429
+    }
+   }
+  }
+ },
+ "pareto": [
+  {
+   "config": "cascade_keep_v3",
+   "cost_per_question_usd": 0.02616,
+   "verified_accuracy": 0.83,
+   "accuracy": 0.83
+  }
+ ],
+ "comparisons": {}
+}

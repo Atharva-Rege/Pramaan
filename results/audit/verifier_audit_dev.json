@@ -1,0 +1,88 @@
+{
+ "meta": {
+  "config": "verifier_audit",
+  "split": "dev",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "925a22871594",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "anthropic/claude-haiku-4-5",
+   "strong": "anthropic/claude-sonnet-5-5",
+   "reflection": "anthropic/claude-opus-5-5"
+  },
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "llm_mode": "api",
+  "provenance": "api",
+  "created_at": "2026-10-03T18:29:03"
+ },
+ "audit": {
+  "small_only": {
+   "n_questions": 100,
+   "abstained_answerable_nonranking": 17,
+   "correct_draft_rejected": {
+    "V2": 2,
+    "V3": 1,
+    "V4": 1
+   },
+   "correct_draft_rejected_total": 4,
+   "wrong_draft_refused": {
+    "V1": 1
+   },
+   "no_numeric_draft": 12,
+   "v3_false_reject_shapes": [
+    {
+     "tier": "T2",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    }
+   ]
+  },
+  "strong_only": {
+   "n_questions": 100,
+   "abstained_answerable_nonranking": 11,
+   "correct_draft_rejected": {
+    "V3": 5,
+    "V4": 1
+   },
+   "correct_draft_rejected_total": 6,
+   "wrong_draft_refused": {
+    "V4": 1
+   },
+   "no_numeric_draft": 4,
+   "v3_false_reject_shapes": [
+    {
+     "tier": "T2",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    },
+    {
+     "tier": "T3",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    },
+    {
+     "tier": "T2",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    },
+    {
+     "tier": "T3",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    },
+    {
+     "tier": "T4",
+     "unit": "percent",
+     "n_inputs": 2,
+     "n_pages": 1
+    }
+   ]
+  }
+ }
+}

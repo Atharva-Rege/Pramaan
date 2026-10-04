@@ -1,0 +1,751 @@
+{
+ "meta": {
+  "config": "rules_only",
+  "split": "dev",
+  "split_hash": "4662bf788f9fae6b",
+  "config_hash": "8ce0e6f974fa",
+  "git_sha": "nogit",
+  "version": "0.1.0",
+  "models": {
+   "small": "offline/rules",
+   "strong": "offline/rules",
+   "reflection": "offline/rules"
+  },
+  "reranker": "artifacts/reranker/cpu/model",
+  "llm_mode": "offline",
+  "provenance": "offline-heuristic",
+  "created_at": "2026-10-03T09:22:41"
+ },
+ "before": {
+  "counts": {
+   "A1": 33,
+   "A2": 2,
+   "A3": 3,
+   "A4": 42,
+   "A5": 3,
+   "A6": 1,
+   "A7": 33
+  },
+  "share": {
+   "A1": 0.28205128205128205,
+   "A2": 0.017094017094017096,
+   "A3": 0.02564102564102564,
+   "A4": 0.358974358974359,
+   "A5": 0.02564102564102564,
+   "A6": 0.008547008547008548,
+   "A7": 0.28205128205128205
+  },
+  "n_failed": 117
+ },
+ "counterfactual": {
+  "n_failed": 116,
+  "flip_rate": {
+   "A1": 0.0,
+   "A2": 0.02586206896551724,
+   "A4": 0.1810344827586207
+  },
+  "attempted": {
+   "A1": 116,
+   "A2": 116,
+   "A4": 116
+  },
+  "detail": [
+   {
+    "qid": "t1-938fed4cae3c",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-7fe3a675f5ab",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-851f296c0f4c",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t4-5472831ef29a",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-c37e1bfc91c7",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-200e5e140438",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-8186a1678179",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-7066082513a2",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-018a31e7b7ac",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-8fa7b0b28516",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-c854c1fc1a04",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-6e2e35a52560",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-62005597a3e6",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-ba1eb58a36d8",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-597982f8e703",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-d592676ef04f",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t6-e30385deb6b6",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-7b83975e6519",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-9cd4a6ce3837",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-b10468aff326",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-749d3c1643ea",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t1-2d6aac882ef1",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-036238532c70",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-0ff02468fefb",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-5148df8e8fa7",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-2130c39f641e",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-be6a678729df",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-7a8e1275b7ad",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-ea650baf1d7e",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t3-b28d5caaec81",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-886de466b099",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-5e1a22131084",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-3263e7e28373",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-1c3c6ef7a0d4",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-0e5ad568f413",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-dceb0964f22d",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-8cbd565c174c",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-b616233d2bc6",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-84be1f7913d1",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-c52ab37be80c",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-fbab578b1f4e",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-82142ec7b297",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-0c5a458fd5e8",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-3912eed17d43",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-d9b2c977139d",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-ba001d2d00e9",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-24996305ede9",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t3-4ef6d8aa74ff",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-351ff270adcf",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-42e53882b2b0",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-2b4b66fc0fc8",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-c6abede0baa1",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-0466c55338ad",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-678855d523fb",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-16e430a0ae41",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-0afae9e4e369",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-128f41bc8561",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-31eac63e7ec7",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-1ef604afda34",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-4cc5839f158c",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-025ee82bd7d5",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t1-360adeb791c7",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-90aa648804a0",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-7e8522bce90e",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-7eeb4301c2ec",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-a6b183d21663",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-25ad52e7eedd",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-4dbc29425275",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-214689a65aec",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-2f02167b4df0",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-8444c51ceb06",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-71f7745de14b",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-3a1d73a21254",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-b7b0554365e4",
+    "A1": false,
+    "A2": true,
+    "A4": true
+   },
+   {
+    "qid": "t1-c91bbe737d48",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t6-b4dde23d55e9",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-c29ee042bf47",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-c52fd6349de0",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-c9f276ae545d",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-be9aa0153baa",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-0a9d7d7bd884",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-72764acbf07f",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t6-f177457ef5eb",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-b9a6e232ef6d",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t2-78d8eaa05cf8",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-3b743a1ad39c",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t5-172abb16cc88",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-62df7bb1ca82",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-94774ad3397e",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-751b5e9bc6a1",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t1-480eabda30bb",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-f109894287c6",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-f35c3d0bf33b",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-f2b2e34fc86c",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-53eaf5ba1510",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-fa6d793710e8",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-53d4a9cceb38",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-b0268ab52779",
+    "A1": false,
+    "A2": true,
+    "A4": false
+   },
+   {
+    "qid": "t1-29fdf85c07e3",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-ff4cfafd8d56",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-e43686046b68",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-55e2581ccf12",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-e903d61fe7ee",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-e0f41afa32f1",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t5-db747c9b6ae8",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-73f309116a55",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-6794d692060a",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-052c6b343b7f",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-d49b3644ffdc",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t3-5325701aa04a",
+    "A1": false,
+    "A2": false,
+    "A4": true
+   },
+   {
+    "qid": "t2-60a59203edec",
+    "A1": false,
+    "A2": true,
+    "A4": false
+   },
+   {
+    "qid": "t3-23375d727bab",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-ef5d87934236",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-7d522deca18f",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t4-a30c042fec11",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   },
+   {
+    "qid": "t1-e241b3502db1",
+    "A1": false,
+    "A2": false,
+    "A4": false
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "split": "test",
+ "best": "strong_only",
+ "pramaan_verified": 0.7,
+ "pramaan_cost_per_correct": 0.03897,
+ "n": 100,
+ "exploratory_best": {
+  "config": "strong_only_v3",
+  "verified": 0.73,
+  "cost_per_correct": 0.03736,
+  "n": 100
+ },
+ "b0_verified": 0.09,
+ "b0_cost_per_correct": 0.02815
+}

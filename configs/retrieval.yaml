@@ -1,0 +1,37 @@
+r1:
+  bm25_k: 100
+  dense_k: 100
+r2:
+  rrf_k: 60
+  top: 50
+r3:
+  enabled: true
+  top: 10
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  finetuned_path: null
+  batch_size: 32
+  max_length: 384
+r4:
+  enabled: false
+  top: 3
+  model_role: small
+
+units:
+  page: true
+  row: true
+
+dense:
+  model: BAAI/bge-small-en-v1.5
+  batch_size: 64
+  query_prefix: "Represent this sentence for searching relevant passages: "
+
+training:
+  hard_negatives_per_positive: 7
+  holdout_fraction: 0.1
+  base_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  colab_base_model: cross-encoder/ms-marco-MiniLM-L-12-v2
+  epochs: 2
+  batch_size: 16
+  lr: 2.0e-5
+  warmup_ratio: 0.1
+  max_length: 384

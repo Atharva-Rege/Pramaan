@@ -1,0 +1,12 @@
+# Extra packages for notebooks/03_gpu_colab.ipynb. Colab already ships torch, torchvision, numpy,
+# pandas, pillow, pydantic, pyyaml and transformers; these are the ones it does not.
+python-doctr==1.1.0
+pdfplumber==0.11.10
+pypdfium2==5.13.0
+pyarrow
+duckdb==1.5.6
+python-dotenv
+rapidfuzz
+typer
+rich
+lxml==6.1.3
